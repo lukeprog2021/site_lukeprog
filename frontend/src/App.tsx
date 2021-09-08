@@ -1,3 +1,4 @@
+import DataTable from "components/DataTable";
 import Footer from "components/Footer";
 import NavBar from "components/NavBar";
 import React from "react";
@@ -8,7 +9,7 @@ function App() {
       <NavBar />
       <div className="container">
         <h1 className="text-primary py-3">Hello world</h1>
-        <h2>Olá mundo</h2>
+        <DataTable/>
       </div>
       <Footer/>
     </>
