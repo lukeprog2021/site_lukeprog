@@ -1,6 +1,8 @@
 package com.lukeprog.lsvendas.controllers;
 
 import com.lukeprog.lsvendas.dto.SaleDTO;
+import com.lukeprog.lsvendas.dto.SaleSuccessDTO;
+import com.lukeprog.lsvendas.dto.SaleSumDTO;
 import com.lukeprog.lsvendas.dto.SellerDTO;
 import com.lukeprog.lsvendas.service.SaleService;
 import com.lukeprog.lsvendas.service.SellerService;
@@ -25,7 +27,13 @@ public class SaleController {
     public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable){
         Page<SaleDTO> list = service.findAll(pageable);
         return ResponseEntity.ok(list);
-        
-        
+
+    }
+
+    @GetMapping(value = "success-by-seller")
+    public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller(){
+        List<SaleSuccessDTO> list = service.successGroupedBySeller();
+        return ResponseEntity.ok(list);
+
     }
 }
